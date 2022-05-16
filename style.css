@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid rgba(255, 0, 0, 0.068);
 }
 
 :root {
@@ -27,7 +26,7 @@ body {
 .container {
   display: grid;
   height: 100%;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
   grid-template-rows: 20% 80%;
 }
 
@@ -80,13 +79,17 @@ body {
 .search-bar {
   align-items: center;
   display: flex;
+  gap: 16px;
 }
 
 .search-bar input {
+  border: 0;
   background-color: var(--gray-100);
   height: 32px;
   width: 100%;
   border-radius: 32px;
+  font: inherit;
+  padding-left: 16px;
 }
 
 .user-info-secondary {
@@ -132,13 +135,16 @@ button {
   background-color: var(--emerald-600);
   color: var(--gray-100);
   border-radius: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 .main-content {
   height: auto;
+  padding: 16px;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 50% 50%;
   color: var(--gray-900);
 }
 
@@ -149,8 +155,81 @@ button {
 
 .announcements-container {
   grid-column: 2/3;
+  grid-row: 1/2;
+  grid-template-rows: 32px 1fr;
+  display: grid;
+}
+
+.announcements-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0px;
+}
+
+.announcement-item {
+  margin-bottom: 16px;
 }
 
 .trending-container {
-  grid-row: 1/2;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-rows: 32px 1fr;
+}
+
+.trending-card {
+  padding: 16px;
+  margin: 8px 0;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.trending-item {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.trending-item .avatar {
+  grid-row: 1/3;
+}
+
+.trending-item p {
+  grid-column: 2/4;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 32px repeat(3, 1fr);
+}
+
+.projects-container h3 {
+  grid-column: 1/3;
+}
+
+.project-item {
+  position: relative;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: white;
+  width: calc(100% - 24px);
+  border-left: 4px solid var(--orange-500);
+  box-shadow: 0 8px 16px rgba(54, 59, 82, 0.137);
+}
+
+.project-item-icon-group {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.project-item-icon-group .fa-solid {
+  padding: 8px;
+  color: var(--gray-400);
 }
